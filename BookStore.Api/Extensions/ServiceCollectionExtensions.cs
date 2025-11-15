@@ -1,6 +1,14 @@
-﻿namespace BookStore.Api.Extensions
+﻿using MediatR;
+using System.Reflection;
+
+namespace BookStore.Api.Extensions
 {
-    public class ServiceCollectionExtensions
+    public static class ServiceCollectionExtensions
     {
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+        {
+            services.AddMediatR(Assembly.GetExecutingAssembly());
+            return services;
+        }
     }
 }
