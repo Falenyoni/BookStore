@@ -1,5 +1,7 @@
 @BookStore.Api_HostAddress = http://localhost:5079
-
+@id = c3bbd149-1fbf-4409-b81b-d16c7ef14932
+@id2 = 0bda4394-dfab-4562-a52d-7f9131f99f58
+### Create Book Feature
 POST {{BookStore.Api_HostAddress}}/api/books
 Content-Type: application/json
 
@@ -7,7 +9,22 @@ Content-Type: application/json
   "title": "Clean Architecture",
   "author": "Robert C. Martin",
   "price": 39.99,
-  "publishedOn": "2017-08-01"
+  "publishedOn": "2017-08-02"
 }
 
+### GetBookById Feature
+GET {{BookStore.Api_HostAddress}}/api/books/{{id}}
+Content-Type: application/json
+
 ###
+
+### Create Book Feature
+POST {{BookStore.Api_HostAddress}}/api/books
+Content-Type: application/json
+
+{
+  "title": "Modular Monolith",
+  "author": "Morteza Giti",
+  "price": 39.99,
+  "publishedOn": "2017-08-02"
+}

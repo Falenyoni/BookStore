@@ -12,6 +12,7 @@ namespace BookStore.Api.Extensions
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddDbContext<BookStoreDbContext>(options =>
             options.UseInMemoryDatabase("BookStoreDb"));
+            services.AddAutoMapper(typeof(Program));
             return services;
         }
     }

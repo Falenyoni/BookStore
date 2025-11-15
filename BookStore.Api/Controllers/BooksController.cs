@@ -1,6 +1,8 @@
 ﻿using BookStore.Api.Features.Books.CreateBook;
+using BookStore.Api.Features.Books.GetBookById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace BookStore.Api.Controllers
 {
@@ -15,10 +17,15 @@ namespace BookStore.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet]
-        public IActionResult Get()
+        [HttpGet("{id:guid}")]
+        public async Task<ActionResult<GetBookByIdResponse>> Get(Guid id)
         {
-            return Ok();
+            var result = await _mediator.Send(new GetBookByIdQuery(id));
+
+            if (result is null)
+                return NotFound();
+
+            return Ok(result);
         }
 
         [HttpPost]
