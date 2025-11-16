@@ -1,3 +1,22 @@
+## Packages
+> dotnet add package AutoMapper --version 12.0.1
+
+> dotnet add package AutoMapper.Extenstions.Microsoft.DependencyInjection --version 12.0.1
+
+> dotnet add package FluentValidation --version 12.0.0
+
+> dotnet add package FluentValidation.DependencyInjectionExtensions --version 12.0.0
+
+> dotnet add package MediatR --version 11.1.0
+
+> dotnet add package MediatR.Extensions.Microsoft.DependencyInjection --version 11.1.0
+
+> dotnet add package Microsoft.EntityFrameworkCore --version 9.0.8
+
+> dotnet add package Microsoft.EntityFrameworkCore.Design --version 8.0.19
+
+> dotnet add package Microsoft.EntityFrameworkCore.InMemory --version 8.0.19
+
 ### Why commad as a Record
 -Response dto as a class
 - This is a design choice
