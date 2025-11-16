@@ -1,4 +1,6 @@
-﻿using BookStore.Api.Infrastructure.Data;
+﻿using BookStore.Api.Infrastructure.Behaviors;
+using BookStore.Api.Infrastructure.Data;
+using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
@@ -12,7 +14,10 @@ namespace BookStore.Api.Extensions
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddDbContext<BookStoreDbContext>(options =>
             options.UseInMemoryDatabase("BookStoreDb"));
+            services.AddValidatorsFromAssemblyContaining<Program>();
             services.AddAutoMapper(typeof(Program));
+            services.AddTransient(typeof(IPipelineBehavior<,>),
+                typeof(ValidatorBehavior<,>));
             return services;
         }
     }

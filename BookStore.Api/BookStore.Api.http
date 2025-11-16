@@ -28,3 +28,15 @@ Content-Type: application/json
   "price": 39.99,
   "publishedOn": "2017-08-02"
 }
+
+
+### Adding FluentVAlidation: Invalid book Creation request
+POST {{BookStore.Api_HostAddress}}/api/books
+Content-Type: application/json
+
+{
+  "title": "",
+  "author": "",
+  "price": -10,
+  "publishedOn": "2026-08-02"
+}
