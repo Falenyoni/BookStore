@@ -1,5 +1,5 @@
 @BookStore.Api_HostAddress = http://localhost:5079
-@id = c3bbd149-1fbf-4409-b81b-d16c7ef14932
+@id = ea6cca86-406b-4e2b-be20-fc0063acc411
 @id2 = 0bda4394-dfab-4562-a52d-7f9131f99f58
 ### Create Book Feature
 POST {{BookStore.Api_HostAddress}}/api/books
@@ -40,3 +40,9 @@ Content-Type: application/json
   "price": -10,
   "publishedOn": "2026-08-02"
 }
+
+
+
+### GetAllBooks Feature
+GET {{BookStore.Api_HostAddress}}/api/books
+Content-Type: application/json

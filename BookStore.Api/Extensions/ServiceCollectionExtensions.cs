@@ -16,8 +16,11 @@ namespace BookStore.Api.Extensions
             options.UseInMemoryDatabase("BookStoreDb"));
             services.AddValidatorsFromAssemblyContaining<Program>();
             services.AddAutoMapper(typeof(Program));
+            services.AddMemoryCache();
             services.AddTransient(typeof(IPipelineBehavior<,>),
                 typeof(ValidatorBehavior<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>),
+               typeof(LoggingBehavior<,>));
             return services;
         }
     }

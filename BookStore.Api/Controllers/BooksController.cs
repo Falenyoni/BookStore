@@ -1,4 +1,5 @@
 ﻿using BookStore.Api.Features.Books.CreateBook;
+using BookStore.Api.Features.Books.GetAllBooks;
 using BookStore.Api.Features.Books.GetBookById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -32,6 +33,14 @@ namespace BookStore.Api.Controllers
         public async Task<ActionResult<CreateBookResponse>> CreateBook([FromBody] CreateBookCommand command)
         {
             var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<List<GetAllBooksResponse>>> GetAllBooks()
+        {
+            var result = await _mediator.Send(new GetAllBooksQuery());
 
             return Ok(result);
         }
