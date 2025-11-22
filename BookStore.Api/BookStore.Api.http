@@ -12,7 +12,7 @@ Content-Type: application/json
   "publishedOn": "2017-08-02"
 }
 
-### GetBookById Feature
+### GetBookById Feature/ GEt a single Book
 GET {{BookStore.Api_HostAddress}}/api/books/{{id}}
 Content-Type: application/json
 
@@ -46,3 +46,16 @@ Content-Type: application/json
 ### GetAllBooks Feature
 GET {{BookStore.Api_HostAddress}}/api/books
 Content-Type: application/json
+
+
+
+### Create Book to trigger domain events
+POST {{BookStore.Api_HostAddress}}/api/books
+Content-Type: application/json
+
+{
+  "title": "Modular Monolith",
+  "author": "Morteza Giti",
+  "price": 39.99,
+  "publishedOn": "2017-08-02"
+}

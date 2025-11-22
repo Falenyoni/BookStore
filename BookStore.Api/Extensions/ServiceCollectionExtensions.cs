@@ -19,8 +19,8 @@ namespace BookStore.Api.Extensions
             services.AddMemoryCache();
             services.AddTransient(typeof(IPipelineBehavior<,>),
                 typeof(ValidatorBehavior<,>));
-            services.AddTransient(typeof(IPipelineBehavior<,>),
-               typeof(LoggingBehavior<,>));
+            //services.AddTransient(typeof(IPipelineBehavior<,>),
+            //   typeof(LoggingBehavior<,>));
             return services;
         }
     }
