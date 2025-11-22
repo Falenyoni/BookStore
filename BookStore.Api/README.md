@@ -39,3 +39,8 @@
 - Using CQRS simplifies our code base by giving each piece a clear single responsibility.
 -  It also let you optimize your read and write models independently.Which can be a huge win in more complex applications
 - Since Vertical slice Architecture is about single purpose features, CQRS fits in beatifully with this architecture.
+
+
+## Unit Testing
+-> Unit Testing should always be focused on testing the handler logic itself.
+-> You need to mock you dependences like (ILogger)
