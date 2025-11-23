@@ -28,7 +28,7 @@ app.UseAuthorization();
 //Map all feature endpoints
 app.MapAllEndPoints();
 
-app.MapControllers();
+//app.MapControllers();
 
 app.Run();
 
