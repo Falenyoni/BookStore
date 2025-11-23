@@ -10,8 +10,8 @@ namespace BookStore.Api.Features.Orders.GetOrderById
 
             group.MapGet("/{id:guid}", async (Guid id, IMediator mediator) =>
             {
-                var result = await mediator.Send(new GetOrderByIdQuery(id));
-                return result is null ? Results.NotFound() : Results.Ok(result);
+                var order = await mediator.Send(new GetOrderByIdQuery(id));
+                return order is null ? Results.NotFound() : Results.Ok(order);
             })
             .WithName("GetOrderById");
         }

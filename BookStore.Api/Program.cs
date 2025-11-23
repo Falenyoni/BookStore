@@ -1,4 +1,5 @@
 using BookStore.Api.Extensions;
+using BookStore.Api.Features;
 using BookStore.Api.Infrastructure.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +24,9 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseAuthorization();
+
+//Map all feature endpoints
+app.MapAllEndPoints();
 
 app.MapControllers();
 

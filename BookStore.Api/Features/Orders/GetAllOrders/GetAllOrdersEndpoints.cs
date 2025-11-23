@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using BookStore.Api.Domain.Entities;
+using MediatR;
 
 namespace BookStore.Api.Features.Orders.GetAllOrders
 {
@@ -10,11 +11,10 @@ namespace BookStore.Api.Features.Orders.GetAllOrders
 
             group.MapGet("", async (IMediator mediator) =>
             {
-                var result = await mediator.Send(new GetAllOrdersQuery());
-                return Results.Ok(result);
+                var orders = await mediator.Send(new GetAllOrdersQuery());
+                return Results.Ok(orders);
             })
                 .WithName("GetAllOrders");
         }
     }
-}
 }
